@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     for (;;) {
         recv(client_socket, recvData, sizeof(recvData), 0);
         if (recvData[0] < 0) break;
-        printf("Last server calculated part: %f\n", recvData[0]);
+        printf("Last server part: %f\n", recvData[0]);
     }
     printf("Server finished\n");
     close(client_socket);

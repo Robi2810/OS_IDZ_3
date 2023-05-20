@@ -57,7 +57,7 @@ void *externalThread(void* args) {
     for (;;) {
         client_length = sizeof(client_addr);
         client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &client_length);
-        printf("New connection from %s\n", inet_ntoa(client_addr.sin_addr));
+        printf("connect %s\n", inet_ntoa(client_addr.sin_addr));
 
         threadArgs *args = (threadArgs*) malloc(sizeof(threadArgs));
         args->socket = client_socket;
@@ -127,15 +127,15 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 8; i++) {
         client_length = sizeof(client_addr);
         client_socket = accept(server_socket, (struct sockaddr *) &client_addr, &client_length);
-        printf("New connection from %s\n", inet_ntoa(client_addr.sin_addr));
+        printf("connect %s\n", inet_ntoa(client_addr.sin_addr));
         hadleTCPConnection(client_socket, totalSum);
     }
-    printf("Sum from children: %f\n", sumFromClients);
+    printf("Sum: %f\n", sumFromClients);
     printf("Total sum: %f\n", totalSum);
     if (totalSum != sumFromClients) {
-        printf("Attorney is liar\n");
+        printf("Lawyer SkaMer\n");
     } else {
-        printf("Everything is OK\n");
+        printf("CORRECT\n");
     }
     isSendData = 0;
     sleep(2);

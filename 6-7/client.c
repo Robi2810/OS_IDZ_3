@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     double realMoney = totalSum * childPart;
     double sumFromServer;
 
-    printf("My part money: %f\n", realMoney);
+    printf("part: %f\n", realMoney);
 
     double sendData[1];
     double recvData[1];
